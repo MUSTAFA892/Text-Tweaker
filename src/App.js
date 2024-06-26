@@ -5,7 +5,7 @@ import Textform from './Components/Textform';
 import Alert from './Components/Alert';
 import Translator from './Components/Translator';
 import About from './Components/About';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Summariser from './Components/Summariser';
 
 function App() {
