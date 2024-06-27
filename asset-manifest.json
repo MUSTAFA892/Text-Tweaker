@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Text-Tweaker/static/css/main.f855e6bc.css",
-    "main.js": "/Text-Tweaker/static/js/main.7202d8e4.js",
-    "static/js/453.ed3810f9.chunk.js": "/Text-Tweaker/static/js/453.ed3810f9.chunk.js",
+    "main.css": "/Text-Tweaker/static/css/main.e6c13ad2.css",
+    "main.js": "/Text-Tweaker/static/js/main.56381e1a.js",
+    "static/js/453.32ec0147.chunk.js": "/Text-Tweaker/static/js/453.32ec0147.chunk.js",
     "index.html": "/Text-Tweaker/index.html",
-    "main.f855e6bc.css.map": "/Text-Tweaker/static/css/main.f855e6bc.css.map",
-    "main.7202d8e4.js.map": "/Text-Tweaker/static/js/main.7202d8e4.js.map",
-    "453.ed3810f9.chunk.js.map": "/Text-Tweaker/static/js/453.ed3810f9.chunk.js.map"
+    "main.e6c13ad2.css.map": "/Text-Tweaker/static/css/main.e6c13ad2.css.map",
+    "main.56381e1a.js.map": "/Text-Tweaker/static/js/main.56381e1a.js.map",
+    "453.32ec0147.chunk.js.map": "/Text-Tweaker/static/js/453.32ec0147.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.7202d8e4.js"
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.56381e1a.js"
   ]
 }
