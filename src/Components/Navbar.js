@@ -17,16 +17,19 @@ export default function Navbar(props) {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/">{props.title}</Link>
+          <Link className="nav-link active" aria-current="page" to="/Text-Tweaker">{props.title}</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link active" to="/translator">Translator</Link>
         </li>
         <li className="nav-item">
+          <Link className="nav-link active" to="/VoiceText">Voice Text</Link>
+        </li>
+        <li className="nav-item">
           <Link className="nav-link active"  to="/Summariser">Summariser</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/about">{props.about}</Link>
+          <Link className="nav-link active" to="/about">{props.about}</Link>
         </li>
       </ul>
       {/* <form className="d-flex" role="search">

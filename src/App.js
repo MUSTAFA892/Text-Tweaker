@@ -5,6 +5,7 @@ import Textform from './Components/Textform';
 import Alert from './Components/Alert';
 import Translator from './Components/Translator';
 import About from './Components/About';
+import VoiceText from './Components/VoiceText'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Summariser from './Components/Summariser';
 
@@ -47,8 +48,9 @@ function App() {
         <div className="container my-3">
           <Routes>
             <Route exact path="/translator" element={<Translator mode={mode} showAlert={showAlert}/>} />
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/" element={<Textform heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} />} />
+            <Route exact path="/about" element={<About mode={mode}/>} />
+            <Route exact path="/VoiceText" element={<VoiceText mode={mode} showAlert={showAlert}/>} />
+            <Route exact path="/Text-Tweaker" element={<Textform heading="Text-Tweaker" mode={mode} showAlert={showAlert} />} />
             <Route exact path="/Summariser" element = {<Summariser mode={mode} showAlert={showAlert}/>}/>
           </Routes>
         </div>

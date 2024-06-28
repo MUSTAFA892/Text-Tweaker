@@ -67,20 +67,20 @@ export default function Textform(props) {
                     <textarea
                         className="form-control"
                         value={text}
-                        onChange={handleOnChange}
+                        onChange={handleOnChange} 
                         id="mybox"
                         rows="8"
                         placeholder="Enter Text Here"
-                        style = {{backgroundColor : props.mode === 'dark'?'grey':'white',...textStyle,color:props.mode === 'dark'?'white':'black'} }
+                        style = {{backgroundColor : props.mode === 'dark'?'grey':'white',...textStyle,color:props.mode === 'dark'?'white':'black',cursor:'pointer'} }
                         
                     ></textarea>
                 </div>
-                <button className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert to Uppercase</button>
-                <button className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>Convert to Lowercase</button>
-                <button className="btn btn-primary mx-2 my-2" onClick={handleClearText}>Clear Text</button>
+                <button disabled = {text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert to Uppercase</button>
+                <button disabled = {text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>Convert to Lowercase</button>
+                <button disabled = {text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleClearText}>Clear Text</button>
                 
                 <div className="btn-group">
-                    <button className="btn btn-primary dropdown-toggle mx-2 my-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button disabled = {text.length === 0} className="btn btn-primary dropdown-toggle mx-2 my-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Change Styles
                     </button>
                     <ul className="dropdown-menu">
@@ -90,8 +90,8 @@ export default function Textform(props) {
                         <li><button className="dropdown-item" onClick={RestTextStyle}>Back to Normal</button></li>
                     </ul>
                 </div>
-                <button className="btn btn-primary mx-2 my-2" onClick={handleCopyText}>Copy Text</button>
-                <button className="btn btn-primary mx-2 my-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+                <button disabled = {text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleCopyText}>Copy Text</button>
+                <button disabled = {text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
             </div>
 
             <div className="container my-3" style={{color : props.mode === 'dark'?'white':'black'}}>

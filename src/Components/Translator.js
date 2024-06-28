@@ -1,20 +1,24 @@
+
 import React, { useState, useRef } from 'react';
 import translate from 'translate';
 import { languages } from './languages';
 import { FaClipboard } from 'react-icons/fa';
 
+
 const Translator = (props) => {
   const [inputText, setInputText] = useState('');
   const [translatedText, setTranslatedText] = useState('');
   const [sourceLang, setSourceLang] = useState('en');
-  const [targetLang, setTargetLang] = useState('es');
-  const textRef = useRef(null);
+  const [targetLang, setTargetLang] = useState('ta');
+  const textRef = useRef(null); 
 
   const translateText = async () => {
     const translation = await translate(inputText, { from: sourceLang, to: targetLang });
     setTranslatedText(translation);
     props.showAlert("Your Text has been Translated", "success");
   };
+
+
 
   const copyToClipboard = () => {
     const textToCopy = textRef.current.innerText;
@@ -63,7 +67,7 @@ const Translator = (props) => {
         id="mybox"
         rows="8"
         placeholder="Enter Text Here"
-        style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}
+        style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : 'black',cursor:'pointer' }}
       ></textarea>
       <br />
       <button className="btn btn-primary my-1" onClick={translateText} style={{ backgroundColor: 'blue' }}>Translate</button>

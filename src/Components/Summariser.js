@@ -1,57 +1,63 @@
 import React, { useState } from 'react';
+import { FaClipboard } from 'react-icons/fa';
 
-const API_KEY = 'C156CBD4B9'; // Replace with your actual API key
-
-const App = () => {
+const Summarizer = (props) => {
   const [text, setText] = useState('');
-  const [summary, setSummary] = useState('');
+  const [summary, setSummary] = useState([]);
 
-  const handleTextChange = (event) => {
-    setText(event.target.value);
+  const summarizeText = () => {
+    const sentences = text.split('.').filter(sentence => sentence.trim() !== '');
+    const summarySentences = sentences.slice(0, 3); // Take the first 3 sentences as the summary
+    setSummary(summarySentences);
   };
 
-  const summarizeText = async () => {
-    const url = `https://api.smmry.com/&SM_API_KEY=${API_KEY}&SM_LENGTH=3&SM_WITH_BREAK`;
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(summary.join('. ')).then(() => {
+      props.showAlert("Text copied to clipboard!", "success");
+    }).catch((err) => {
+      console.error('Failed to copy text: ', err);
+    });
+  };
 
-    try {
-      const response = await fetch(url, {
-        method: 'POST', // Adjust method based on API documentation (usually POST or GET)
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ text }), // Adjust based on API requirements
-      });
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      const data = await response.json();
-      setSummary(data.summary); // Adjust based on API response structure
-
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
+  const resetText = () => {
+    setText('');
+    setSummary([]);
+    props.showAlert("Text has been reset!", "success");
   };
 
   return (
-    <div>
+    <div className="summarizer-container" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
+      <h2>Text Summarizer</h2>
       <textarea
-        rows="10"
-        cols="50"
+        className="form-control"
         value={text}
-        onChange={handleTextChange}
-        placeholder="Enter your text here..."
-      />
-      <br />
-      <button onClick={summarizeText}>Summarize Text</button>
-      <br />
+        onChange={(e) => setText(e.target.value)}
+        id="mybox"
+        rows="8"
+        placeholder="Enter Text Here"
+        style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}
+      ></textarea>
       <div>
-        <h2>Summary:</h2>
-        <p>{summary}</p>
+        <button className="btn btn-primary my-3 mx-2" onClick={summarizeText}>Summarize</button>
+        <button className="btn btn-primary my-3 mx-2" onClick={resetText}>Reset Text</button>
+      </div>
+      <h2 className='container my-2'>Summarized Text</h2>
+      <div className="translated-container" style={{ position: 'relative', border: '1px solid #ccc', padding: '10px', borderRadius: '5px' }}>
+        {summary.length > 0 ? (
+          <ul>
+            {summary.map((sentence, index) => (
+              <li key={index}>{sentence.trim()}.</li>
+            ))}
+          </ul>
+        ) : (
+          <p>Nothing to preview</p>
+        )}
+        <button type="button" className="btn-clipboard" onClick={copyToClipboard} style={{ position: 'absolute', top: '10px', right: '10px', background: 'none', border: 'none', cursor: 'pointer' }}>
+          <FaClipboard />
+        </button>
       </div>
     </div>
   );
 };
 
-export default App;
+export default Summarizer;
