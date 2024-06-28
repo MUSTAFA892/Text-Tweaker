@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/Text-Tweaker/static/css/main.e6c13ad2.css",
-    "main.js": "/Text-Tweaker/static/js/main.56381e1a.js",
+    "main.css": "/Text-Tweaker/static/css/main.431a6e14.css",
+    "main.js": "/Text-Tweaker/static/js/main.593e14e0.js",
     "static/js/453.32ec0147.chunk.js": "/Text-Tweaker/static/js/453.32ec0147.chunk.js",
+    "static/media/mustafa.jpg": "/Text-Tweaker/static/media/mustafa.3ea580abbe96e38cf50f.jpg",
     "index.html": "/Text-Tweaker/index.html",
-    "main.e6c13ad2.css.map": "/Text-Tweaker/static/css/main.e6c13ad2.css.map",
-    "main.56381e1a.js.map": "/Text-Tweaker/static/js/main.56381e1a.js.map",
+    "main.431a6e14.css.map": "/Text-Tweaker/static/css/main.431a6e14.css.map",
+    "main.593e14e0.js.map": "/Text-Tweaker/static/js/main.593e14e0.js.map",
     "453.32ec0147.chunk.js.map": "/Text-Tweaker/static/js/453.32ec0147.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.56381e1a.js"
+    "static/css/main.431a6e14.css",
+    "static/js/main.593e14e0.js"
   ]
 }
